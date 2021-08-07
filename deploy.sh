@@ -71,13 +71,17 @@ cp -rf virtualuser_conf/ /etc/vsftpd/
 chmod 644 /etc/vsftpd/virtualuser_conf/*
 
 
+
+# scipts for middle transfer
+cp -rf scripts/ /etc/vsftpd/
+chmod 755 /etc/vsftpd/scripts/*
+
+
 # autosendmail
 cp -rf autosendmail/ /etc/vsftpd/scripts/
 chmod 744 /etc/vsftpd/scripts/autosendmail/*.sh
 
-cp -rf scripts/ /etc/vsftpd/
-chmod 755 /etc/vsftpd/scripts/*
-
+# per-minute job;daily job will create lately
 chmod 644 cron.d/*
 cp -f cron.d/* /etc/cron.d/
 
