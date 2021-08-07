@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 CFG_LAST_MODIFYTIME  = NEWER_CFG_LAST_MODIFYTIME
                 print("reload config again:{}".format(cfg))
 
-            split_pos                = line.fine(HOST_NAME)
+            split_pos                = line.find(HOST_NAME)
             mail_infos['time']       = line[0:split_pos]
 
             split_pos                = line.find(superlog_flag)
@@ -103,7 +103,7 @@ if __name__ == '__main__':
             ftp_operator             = line[split_pos + len(superlog_flag):next_split_pos].strip()
             operator_details         = cfg['ftp_supers'][ftp_operator]
 
-            if operator_detials is None:
+            if operator_details is None:
                 print("cannot get operator's detail info,please check!")
                 continue
 
