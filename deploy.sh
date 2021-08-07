@@ -70,6 +70,11 @@ chmod 600 /etc/vsftpd/virtualuser.plain.txt
 cp -rf virtualuser_conf/ /etc/vsftpd/
 chmod 644 /etc/vsftpd/virtualuser_conf/*
 
+
+# autosendmail
+cp -rf autosendmail/ /etc/vsftpd/scripts/
+chmod 744 /etc/vsftpd/scripts/autosendmail/*.sh
+
 cp -rf scripts/ /etc/vsftpd/
 chmod 755 /etc/vsftpd/scripts/*
 
@@ -79,6 +84,9 @@ cp -f cron.d/* /etc/cron.d/
 # as logrotate providing scipts
 cp -f scripts/rmftpinoldfiles.sh /etc/cron.daily/
 chmod 744 /etc/cron.daily/rmftpinoldfiles.sh
+
+
+
 
 echo "#%PAM-1.0
 auth requisite pam_userdb.so db=/etc/vsftpd/virtualuser

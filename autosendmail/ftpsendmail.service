@@ -3,7 +3,7 @@ Description=ftp transfer sendmail daemon
 After=network.target vsftpd.service
 
 [Service]
-ExecStart=/root/sendmail/sendmail.py
+ExecStart=/etc/vsftpd/scripts/autosendmail/sendmail.py
 ExecStop=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
