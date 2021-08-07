@@ -1,0 +1,11 @@
+local_root=./ftpout
+virtual_use_local_privs=NO
+chown_upload_mode=0654
+write_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enable=YES
+anon_upload_enable=YES
+anon_world_readable_only=YES
+anon_umask=022
+# can't be used as public file-sharing node;deny download operations
+cmds_denied=GET,MGET,RETR

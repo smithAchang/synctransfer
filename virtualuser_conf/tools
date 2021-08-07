@@ -1,0 +1,7 @@
+local_root=./tools
+virtual_use_local_privs=NO
+write_enable=NO
+anon_mkdir_write_enable=NO
+anon_other_write_enable=NO
+anon_upload_enable=NO
+anon_world_readable_only=YES

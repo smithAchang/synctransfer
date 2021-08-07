@@ -1,0 +1,17 @@
+{
+ "sender" : "sender@test.com",
+ "receiver" : ["receiver1@test.com"],
+ "receiver_Cc" : ["receiverCc1@test.com","receiverCc2@test.com"],
+ "ftp_supers" : {
+                  "monitorOne" : {
+		                   "home" : "/homedir",
+				   "name" : "realName",
+				   "receiver_Cc" : ["leader1@test.com","leader2@test.com"],
+				   "mail" : "monitorOne@test.com"
+		                 }
+ 
+ 
+                }
+
+
+}

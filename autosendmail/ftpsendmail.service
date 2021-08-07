@@ -1,0 +1,12 @@
+[Unit]
+Description=ftp transfer sendmail daemon
+After=network.target vsftpd.service
+
+[Service]
+ExecStart=/root/sendmail/sendmail.py
+ExecStop=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
