@@ -1,4 +1,4 @@
 # Run the rsync jobs
 SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
-*/2 * * * * ftplocaluser flock -xn/home/ftplocaluser/rsync.lock -c  "/bin/bash /etc/vsftpd/scripts/permin_rsync.sh"
+*/2 * * * * ftplocaluser flock -xn /home/ftplocaluser/rsync.lock -c  "/bin/bash /etc/vsftpd/scripts/permin_rsync.sh"
