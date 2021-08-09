@@ -126,7 +126,13 @@ chmod 644 /etc/logrotate.d/vsftpd
 echo "enable vsftpd autostart ..."
 systemctl enable vsftpd
 
-echo "stop firewalld ..."
-systemctl stop firewalld
-systemctl disable firewalld
+systemctl is-enabled firewalld >/dev/null 2>&1
+
+if [ $? -eq 0 ];then
+ echo "stop firewalld ..."
+ systemctl stop firewalld
+ systemctl disable firewalld
+fi
+
+
 

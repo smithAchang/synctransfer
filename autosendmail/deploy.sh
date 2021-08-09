@@ -24,9 +24,23 @@ pushd "$PRGDIR"
 HOME=`pwd`
 LOCAL_USER="ftplocaluser"
 
+ensurePython3=$(rpm -qa python3 | wc -l)
 
-echo "enable sendmail service ..."
-systemctl link $HOME/ftpsendmail.service
-systemctl enable ftpsendmail.service
+if [ $ensurePython3 -eq 0 ];then
+  echo "python3 must be provided firstly!"
+  exit 1
+fi
+
+
+systemctl is-enabled ftpsendmail >/dev/null 2>&1
+
+if [ $? -ne 0 ];then
+  echo "enable sendmail service ..."
+  systemctl link $HOME/ftpsendmail.service
+  systemctl enable ftpsendmail.service
+fi
+
+
+
 popd
 
